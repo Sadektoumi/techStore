@@ -16,19 +16,19 @@ class DetailsProduit extends Component {
               {/* Wrapper for slides */}
               <div className="carousel-inner">
                 <div className="item active">
-                  <a href><img src="images/product-details/similar1.jpg" alt="" /></a>
-                  <a href><img src="images/product-details/similar2.jpg" alt="" /></a>
-                  <a href><img src="images/product-details/similar3.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar1.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar2.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar3.jpg" alt="" /></a>
                 </div>
                 <div className="item">
-                  <a href><img src="images/product-details/similar1.jpg" alt="" /></a>
-                  <a href><img src="images/product-details/similar2.jpg" alt="" /></a>
-                  <a href><img src="images/product-details/similar3.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar1.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar2.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar3.jpg" alt="" /></a>
                 </div>
                 <div className="item">
-                  <a href><img src="images/product-details/similar1.jpg" alt="" /></a>
-                  <a href><img src="images/product-details/similar2.jpg" alt="" /></a>
-                  <a href><img src="images/product-details/similar3.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar1.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar2.jpg" alt="" /></a>
+                  <a><img src="images/product-details/similar3.jpg" alt="" /></a>
                 </div>
               </div>
               {/* Controls */}
@@ -58,7 +58,7 @@ class DetailsProduit extends Component {
               <p><b>Availability:</b> In Stock</p>
               <p><b>Condition:</b> New</p>
               <p><b>Brand:</b> E-SHOPPER</p>
-              <a href><img src="images/product-details/share.png" className="share img-responsive" alt="" /></a>
+              <a><img src="images/product-details/share.png" className="share img-responsive" alt="" /></a>
             </div>{/*/product-information*/}
           </div>
         </div>{/*/product-details*/}

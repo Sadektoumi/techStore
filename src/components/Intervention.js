@@ -25,10 +25,10 @@ class Intervention extends Component {
             <tbody>
               <tr>
                 <td className="cart_product">
-                  <a href><img src="images/cart/one.png" alt="" /></a>
+                  <a><img src="images/cart/one.png" alt="" /></a>
                 </td>
                 <td className="cart_description">
-                  <h4><a href>Colorblock Scuba</a></h4>
+                  <h4><a>Colorblock Scuba</a></h4>
                   <p>Web ID: 1089772</p>
                 </td>
                 <td className="cart_price">

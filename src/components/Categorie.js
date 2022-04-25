@@ -17,11 +17,11 @@ const Categorie = () => {
           <div id="sportswear" className="panel-collapse collapse">
             <div className="panel-body">
               <ul>
-                <li><a href>Nike </a></li>
-                <li><a href>Under Armour </a></li>
-                <li><a href>Adidas </a></li>
-                <li><a href>Puma</a></li>
-                <li><a href>ASICS </a></li>
+                <li><a>Nike </a></li>
+                <li><a>Under Armour </a></li>
+                <li><a>Adidas </a></li>
+                <li><a>Puma</a></li>
+                <li><a>ASICS </a></li>
               </ul>
             </div>
           </div>
@@ -39,15 +39,15 @@ const Categorie = () => {
             <div className="panel-body">
               <ul>
                 <li><a href="#">Fendi</a></li>
-                <li><a href>Guess</a></li>
-                <li><a href>Valentino</a></li>
-                <li><a href>Dior</a></li>
-                <li><a href>Versace</a></li>
-                <li><a href>Armani</a></li>
-                <li><a href>Prada</a></li>
-                <li><a href>Dolce and Gabbana</a></li>
-                <li><a href>Chanel</a></li>
-                <li><a href>Gucci</a></li>
+                <li><a>Guess</a></li>
+                <li><a>Valentino</a></li>
+                <li><a>Dior</a></li>
+                <li><a>Versace</a></li>
+                <li><a>Armani</a></li>
+                <li><a>Prada</a></li>
+                <li><a>Dolce and Gabbana</a></li>
+                <li><a>Chanel</a></li>
+                <li><a>Gucci</a></li>
               </ul>
             </div>
           </div>
@@ -64,16 +64,16 @@ const Categorie = () => {
           <div id="mens" className="panel-collapse collapse">
             <div className="panel-body">
               <ul>
-                <li><a href>Fendi</a></li>
-                <li><a href>Guess</a></li>
-                <li><a href>Valentino</a></li>
-                <li><a href>Dior</a></li>
-                <li><a href>Versace</a></li>
-                <li><a href>Armani</a></li>
-                <li><a href>Prada</a></li>
-                <li><a href>Dolce and Gabbana</a></li>
-                <li><a href>Chanel</a></li>
-                <li><a href>Gucci</a></li>
+                <li><a>Fendi</a></li>
+                <li><a>Guess</a></li>
+                <li><a>Valentino</a></li>
+                <li><a>Dior</a></li>
+                <li><a>Versace</a></li>
+                <li><a>Armani</a></li>
+                <li><a>Prada</a></li>
+                <li><a>Dolce and Gabbana</a></li>
+                <li><a>Chanel</a></li>
+                <li><a>Gucci</a></li>
               </ul>
             </div>
           </div>

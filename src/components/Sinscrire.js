@@ -1,61 +1,110 @@
 import Categorie from './Categorie';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 
-    function Sinscrire(){ 
-        const[nom,setnom]=useState("");
-        const[password,setpassword]=useState("");
-        const[pseudo,setpseudo]=useState("");
-        const[prenom,setprenom]=useState("");
-        const[cin,setcin]=useState("");
-        const[adresse,setadresse]=useState("");
-        const[telephone,settelephone]=useState("");
-        const[codePostal,setcodePostal]=useState("");
-        const[sexe,setsexe]=useState("");
-        const[email,setemail]=useState("");
-       
-       
-        async function signUp(){
+// import { LOGIN_SUCCESS,GET_TICKETS_SUCCESS, REGISTER_SUCCESS } from '../types';
+import {register} from '../redux/actions/user.actions';
 
-         let item={nom,prenom,password,email,pseudo,sexe,codePostal,cin,telephone,adresse}
-        
-         let result = await fetch("http://127.0.0.1:8000/api/register",
-         {method:'POST',
-         Headers:{
-           "Content-type":"application/json",
-           "Accept":"application/json"
-         },
-         body:JSON.stringify(item)
-        
-        });
-        result =await result.json();
-        console.warn("result",result)
-       }
+function Sinscrire() {
+  const [nom, setnom] = useState("");
+  const [password, setpassword] = useState("");
+  const [pseudo, setpseudo] = useState("");
+  const [prenom, setprenom] = useState("");
+  const [cin, setcin] = useState("");
+  const [adresse, setadresse] = useState("");
+  const [telephone, settelephone] = useState("");
+  const [codePostal, setcodePostal] = useState("");
+  const [sexe, setsexe] = useState("");
+  const [email, setemail] = useState("");
 
+  const handlenom = (e) => {
+    setnom(e.target.value)
+  }
 
-         return (<div> <Categorie /> <div className="col-sm-9 padding-right">:
-             <div className="bill-to">
-        <p>S'inscrire</p>
-        <div className="form-one ">
-          <form>
-            <input type="text" placeholder="Email *" value={email} onChange={(e)=>setemail(e.target.value)} required />
-            <input type="text" placeholder="S'identifier *" value={pseudo} onChange={(e)=>setpseudo(e.target.value)}required/>
-            <input type="password" placeholder="mot de passe * " value={password} onChange={(e)=>setpassword(e.target.value)}required />
-            <select value={sexe} onChange={(e)=>setsexe(e.target.value)} required>
-              <option>Homme</option>
-              <option>Femme</option>
-            </select>
-            <p></p>
-            <input type="text" placeholder="Nom *" value={nom} onChange={(e)=>setnom(e.target.value)} required/>
-            <input type="text" placeholder="Prenom *" value={prenom} onChange={(e)=>setprenom(e.target.value)} required/>
-            <input type="text" placeholder="Telephone *" value={telephone} onChange={(e)=>settelephone(e.target.value)} required/>
-            <input type="text" placeholder="Addresse *" value={adresse} onChange={(e)=>setadresse(e.target.value)} required/>
-            <input type="text" placeholder="Code Postal *" value={codePostal} onChange={(e)=>setcodePostal(e.target.value)}required />
-            <input type="text" placeholder="Cin *" value={cin} onChange={(e)=>setcin(e.target.value)} required/>
-            <button className="btn btn-primary" onClick={signUp}>S'inscrire</button>
-          </form>
-        </div>
-      </div> </div> </div> );
-    }
+  const handleemail = (e) => {
+    setemail(e.target.value)
+  }
 
+  const handlepassword = (e) => {
+    setpassword(e.target.value)
+  }
+
+  const handlepseudo = (e) => {
+    setpseudo(e.target.value)
+  }
+
+  const handleprenom = (e) => {
+    setprenom(e.target.value)
+  }
+
+  const handlecin = (e) => {
+    setcin(e.target.value)
+  }
+
+  const handleadresse = (e) => {
+    setadresse(e.target.value)
+  }
+
+  const handletelephone = (e) => {
+    settelephone(e.target.value)
+  }
+
+  const handlecodePostal = (e) => {
+    setcodePostal(e.target.value)
+  }
+
+  const handlesexe = (e) => {
+    setsexe(e.target.value)
+  }
+
+  
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const handleSubmit = async () => {
  
+    let data = {
+      nom : nom,
+      prenom :prenom ,
+      password : password,
+      email : email,
+      pseudo :pseudo ,
+      sexe : sexe,
+      codePostal : codePostal,
+      cin : cin,
+      telephone : telephone,
+      adresse  : adresse
+    }
+    dispatch(await register(data, history))
+  }
+
+
+
+  return (<div className="col-sm-9 ">
+    <div className="bill-to">
+      <p>S'inscrire</p>
+      <div className="form-one ">
+        <form onSubmit={e => e.preventDefault()}>
+          <input type="text" placeholder="Email *" value={email} onChange={handleemail} required />
+          <input type="text" placeholder="S'identifier *" value={pseudo} onChange={handlepseudo} required />
+          <input type="password" placeholder="mot de passe * " value={password} onChange={handlepassword} required />
+          <select value={sexe} onChange={handlesexe} required>
+            <option>Homme</option>
+            <option>Femme</option>
+          </select>
+          <p></p>
+          <input type="text" placeholder="Nom *" value={nom} onChange={handlenom} required />
+          <input type="text" placeholder="Prenom *" value={prenom} onChange={handleprenom} required />
+          <input type="text" placeholder="Telephone *" value={telephone} onChange={handletelephone} required />
+          <input type="text" placeholder="Addresse *" value={adresse} onChange={handleadresse} required />
+          <input type="text" placeholder="Code Postal *" value={codePostal} onChange={handlecodePostal} required />
+          <input type="text" placeholder="Cin *" value={cin} onChange={handlecin} required />
+          <button className="btn btn-primary" onClick={handleSubmit}>S'inscrire</button>
+        </form>
+      </div>
+    </div> </div>);
+}
+
+
 export default Sinscrire;

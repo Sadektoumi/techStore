@@ -16,53 +16,43 @@ import {
   Route
 } from "react-router-dom";
 import Panier from './components/Panier';
+import { ProtectedRoute} from './protected.route';
+import { NoAuthRoute } from './noauth.route';
 
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {  }
-  }
-//<Produit key={i} produit={data} /><DetailsProduit />
-/*
-
-
-*/
-
-
-
-  render() { 
+function App () {
+  const user = localStorage.getItem("user")
+  const token = localStorage.getItem("token")
     return (
       <Router >
-      <div> <Navbar />
+      <div> <Navbar user={user}/>
     <Slider />
     <section>
     <div class="container">
-        <div class="row">
+        <div class="row" style={{textAlign: "center"}}>
     
     
     <Switch>
-    <Route exact path="/">
+    <ProtectedRoute exact path="/">
             <Home />
-          </Route>
-          <Route exact path="/Sinscrire">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/Sinscrire">
             <Sinscrire />
-          </Route>
-          <Route exact path="/Reparation">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/Reparation">
             <Reparation />
-          </Route>
-          <Route exact path="/Intervention">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/Intervention">
             <Intervention />
-          </Route>
-          <Route exact path="/SeConnecter">
+          </ProtectedRoute>
+          <ProtectedRoute exact path="/SeConnecter">
             <SeConnecter />
-          </Route>
-          <Route path="/Panier">
+          </ProtectedRoute>
+          <ProtectedRoute path="/Panier">
             <Panier />
-          </Route>
-          <Route path="*">
+          </ProtectedRoute>
+          <ProtectedRoute path="*">
             <Home />
-          </Route>
+          </ProtectedRoute>
         </Switch>
     
    </div>
@@ -72,7 +62,7 @@ class App extends Component {
          </div>
          
          </Router> );
-  }
+  
 }
  
 export default App;

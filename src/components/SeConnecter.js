@@ -1,29 +1,49 @@
 import React, { Component } from 'react';
 import Categorie from './Categorie';
-class SeConnecter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {  }
+import { useHistory } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { login } from '../redux/actions/user.actions'
+
+
+function SeConnecter() {
+  const history = useHistory()
+  const dispatch = useDispatch()
+  const [email, setemail] = React.useState("")
+  const [password, setpassword] = React.useState("")
+
+  const handleEmail = (e) => {
+    setemail(e.target.value)
+  }
+  const handlePassword = (e) => {
+    setpassword(e.target.value)
+  }
+
+  const handleSubmit = async (e) => {
+
+    let data = {
+      email: email,
+      password: password
     }
-    render() { 
-        return (<div> <Categorie /> <div className="col-sm-9 padding-right">
-            <div className="col-sm-9 col-sm-offset-1">
-            <div className="login-form">
-              <h2>Se Connecter</h2>
-              <form action="#">
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="mot de passe" />
-                <span>
-                  <input type="checkbox" className="checkbox" /> 
-                  Gardez-moi connecté
-                </span>
-                
-                <button  type="submit" className="btn btn-default">Login</button>
-              </form>
-            </div>
-          </div></div></div>
-         );
-    }
+    dispatch(await login(data, history))
+  }
+
+  return (
+    <div>
+      <Categorie />
+      <div className="col-sm-9 padding-right">
+        <div className="col-sm-9 col-sm-offset-1">
+          <div className="login-form">
+            <h2>Se Connecter</h2>
+            <form onSubmit={e => e.preventDefault()}>
+              <input value={email}
+                onChange={handleEmail} type="email" placeholder="Email" />
+              <input value={password}
+                onChange={handlePassword} type="password" placeholder="mot de passe" />
+              <button className="btn btn-default" onClick={handleSubmit}>Login</button>
+            </form>
+          </div>
+        </div></div></div>
+  );
 }
- 
+
 export default SeConnecter;
