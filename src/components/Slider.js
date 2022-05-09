@@ -25,9 +25,9 @@ const Slider = (props) => {
               </div>
               <div className="item">
                 <div className="col-sm-6">
-                  <h1><span>E</span>-SHOPPER</h1>
-                  <h2>100% Responsive Design</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                  <h1><span>E</span>ECHSTORE</h1>
+                  <h2>MSI  i7 10éme géneration OMEN </h2>
+                  <p>2700dt - PROMOTIONS -20%  </p>
                   <button type="button" className="btn btn-default get">Get it now</button>
                 </div>
                 <div className="col-sm-6">
@@ -37,9 +37,9 @@ const Slider = (props) => {
               </div>
               <div className="item">
                 <div className="col-sm-6">
-                  <h1><span>E</span>-SHOPPER</h1>
-                  <h2>Free Ecommerce Template</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                  <h1><span>T</span>ECHSTORE</h1>
+                  <h2>HP i7 10éme géneration </h2>
+                  <p>2500dt - PROMOTIONS -30%  </p>
                   <button type="button" className="btn btn-default get">Get it now</button>
                 </div>
                 <div className="col-sm-6">

@@ -19,12 +19,18 @@ import Panier from './components/Panier';
 import { ProtectedRoute} from './protected.route';
 import { NoAuthRoute } from './noauth.route';
 
+
+
+
+
+
+
+
 function App () {
-  const user = localStorage.getItem("user")
-  const token = localStorage.getItem("token")
+
     return (
       <Router >
-      <div> <Navbar user={user}/>
+      <div> <Navbar/>
     <Slider />
     <section>
     <div class="container">

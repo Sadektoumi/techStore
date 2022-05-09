@@ -4,10 +4,11 @@ import Produit from './Produit';
 import axios from 'axios';
 function Home () {
 
-    return (<div><Categorie /> <div className="col-sm-9 padding-right"> <div>
-        {/* {this.state.produits.map((data, i) => (
-            <Produit key={i} produit={data} />
-        ))} */}
+    return (<div><Categorie /> 
+    <div className="col-sm-9 padding-right"> <div>
+    <Produit /> 
+
+
     </div> </div></div>);
 
 }

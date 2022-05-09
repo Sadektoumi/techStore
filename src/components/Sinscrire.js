@@ -81,17 +81,21 @@ function Sinscrire() {
 
 
 
-  return (<div className="col-sm-9 ">
-    <div className="bill-to">
+  return (<div>
+    <Categorie />
+    <div className="col-sm-9 padding-right">
+    <div className="col-sm-9 col-sm-offset-1">
       <p>S'inscrire</p>
-      <div className="form-one ">
+      
+      <div className="login-form ">
         <form onSubmit={e => e.preventDefault()}>
           <input type="text" placeholder="Email *" value={email} onChange={handleemail} required />
           <input type="text" placeholder="S'identifier *" value={pseudo} onChange={handlepseudo} required />
           <input type="password" placeholder="mot de passe * " value={password} onChange={handlepassword} required />
-          <select value={sexe} onChange={handlesexe} required>
-            <option>Homme</option>
-            <option>Femme</option>
+          <select placeholder ="sexe" value={sexe} onChange={handlesexe} required>
+           <option>sexe</option> 
+            <option value={"Homme"}>Homme</option>
+            <option value={"Femme"}>Femme</option>
           </select>
           <p></p>
           <input type="text" placeholder="Nom *" value={nom} onChange={handlenom} required />
@@ -103,7 +107,7 @@ function Sinscrire() {
           <button className="btn btn-primary" onClick={handleSubmit}>S'inscrire</button>
         </form>
       </div>
-    </div> </div>);
+    </div> </div></div>);
 }
 
 

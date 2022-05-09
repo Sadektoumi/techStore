@@ -36,9 +36,9 @@ function SeConnecter() {
             <h2>Se Connecter</h2>
             <form onSubmit={e => e.preventDefault()}>
               <input value={email}
-                onChange={handleEmail} type="email" placeholder="Email" />
+                onChange={handleEmail} type="email" placeholder="Email" required/>
               <input value={password}
-                onChange={handlePassword} type="password" placeholder="mot de passe" />
+                onChange={handlePassword} type="password" placeholder="mot de passe" required />
               <button className="btn btn-default" onClick={handleSubmit}>Login</button>
             </form>
           </div>
